@@ -11,6 +11,7 @@ public class p_collision : MonoBehaviour
         {
             movement.enabled = false;
             Debug.Log("movement disabled");
+            FindObjectOfType<gameManager>().EndGame();
         }        
     }
 }

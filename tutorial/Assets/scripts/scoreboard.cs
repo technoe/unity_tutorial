@@ -8,7 +8,13 @@ public class scoreboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.position.z.ToString("0"));
-        score.text = player.position.z.ToString("0");
+        if(FindObjectOfType<gameManager>().gameover)
+        {
+            score.text = "Game Over!";
+        }
+        else
+        {
+            score.text = player.position.z.ToString("0");
+        }
     }
 }

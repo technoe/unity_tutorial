@@ -39,17 +39,6 @@ public class p_movement : MonoBehaviour
     float z_time = z * dtime;
     float x_time = x * dtime;
     rb.AddForce(0, 0, z_time);
-    // forward
-    // if(w)
-    // {
-    //   rb.AddForce(0, 0, z_time);
-    // }
-
-    // // backwards
-    // if(s)
-    // {
-    //   rb.AddForce(0, 0, -z_time);
-    // }
 
     // left
     if(a)
@@ -66,6 +55,11 @@ public class p_movement : MonoBehaviour
     if(sp)
     {
       rb.AddForce(0, jforce, 0);
+    }
+
+    if ( rb.position.y < -1f )
+    {
+      FindObjectOfType<gameManager>().EndGame();
     }
   }
 }
